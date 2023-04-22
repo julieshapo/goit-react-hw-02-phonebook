@@ -1,9 +1,11 @@
+import { Container } from './Layout.styled';
+
 export const Layout = ({ children }) => {
   return (
-    <div>
-      <header>Header</header>
+    <Container>
+      <header></header>
       <main>{children}</main>
-      <footer>Footer</footer>
-    </div>
+      <footer></footer>
+    </Container>
   );
 };

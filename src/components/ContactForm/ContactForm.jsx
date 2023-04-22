@@ -1,7 +1,14 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
-import { FormLabel, Form, ErrorMessage } from './ContactForm.styled';
+import {
+  FormLabel,
+  Form,
+  Field,
+  ErrorMessage,
+  Button,
+  Title,
+} from './ContactForm.styled';
 
 const ContactScheme = Yup.object().shape({
   name: Yup.string()
@@ -21,7 +28,7 @@ const ContactScheme = Yup.object().shape({
 export const ContactForm = ({ onAdd }) => {
   return (
     <div>
-      <h1>Phonebook</h1>
+      <Title>Phonebook</Title>
       <Formik
         initialValues={{ name: '', number: '' }}
         validationSchema={ContactScheme}
@@ -42,7 +49,7 @@ export const ContactForm = ({ onAdd }) => {
             <Field name="number" placeholder="111-11-11" />
             <ErrorMessage name="number" component="span" />
           </FormLabel>
-          <button type="submit">Add contact</button>
+          <Button type="submit">Add contact</Button>
         </Form>
       </Formik>
     </div>
