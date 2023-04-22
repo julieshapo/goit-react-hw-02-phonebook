@@ -5,5 +5,5 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 40px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 40px;
 `;
