@@ -29,7 +29,9 @@ export class App extends Component {
   };
 
   findContact = evt => {
-    this.setState({ filter: evt.currentTarget.value.trim() });
+    this.setState({
+      filter: evt.currentTarget.value.toLocaleLowerCase().trim(),
+    });
   };
 
   render() {
@@ -40,9 +42,9 @@ export class App extends Component {
       state: { filter, contacts },
     } = this;
 
-    const filterToLowerCase = filter.toLocaleLowerCase();
+    // const filterToLowerCase = filter.toLocaleLowerCase();
     const contactsToShow = contacts.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(filterToLowerCase)
+      contact.name.toLocaleLowerCase().includes(filter)
     );
 
     return (
